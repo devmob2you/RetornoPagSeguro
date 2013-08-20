@@ -1,0 +1,28 @@
+
+CREATE TABLE `PagSeguroTransacoes` (
+  `TransacaoID` varchar(36) NOT NULL,
+  `VendedorEmail` varchar(200) NOT NULL,
+  `Referencia` varchar(200) default NULL,
+  `TipoFrete` char(2) default NULL,
+  `ValorFrete` decimal(10,2) default NULL,
+  `Extras` decimal(10,2) default NULL,
+  `Anotacao` text,
+  `TipoPagamento` varchar(50) NOT NULL,
+  `StatusTransacao` varchar(50) NOT NULL,
+  `CliNome` varchar(200) NOT NULL,
+  `CliEmail` varchar(200) NOT NULL,
+  `CliEndereco` varchar(200) NOT NULL,
+  `CliNumero` varchar(10) default NULL,
+  `CliComplemento` varchar(100) default NULL,
+  `CliBairro` varchar(100) NOT NULL,
+  `CliCidade` varchar(100) NOT NULL,
+  `CliEstado` char(2) NOT NULL,
+  `CliCEP` varchar(9) NOT NULL,
+  `CliTelefone` varchar(14) default NULL,
+  `NumItens` int(11) NOT NULL,
+  `Data` datetime NOT NULL,
+  `status` tinyint(1) unsigned NOT NULL default '0',
+  UNIQUE KEY `TransacaoID` (`TransacaoID`,`StatusTransacao`),
+  KEY `Referencia` (`Referencia`),
+  KEY `status` (`status`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
